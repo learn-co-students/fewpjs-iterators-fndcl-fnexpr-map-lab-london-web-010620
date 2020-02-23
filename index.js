@@ -12,5 +12,10 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  return tutorials.map( title => {
+    let words = title.split(' ') //=> ["what", "does", "the", "this", "keyword", "mean?"]
+    let wordToTitleCase = words.map(word => word.charAt(0).toUpperCase() + word.slice(1)) //=> take first letter and upcase. Slice word at 1 and return the rest
+    let result = wordToTitleCase.join(' ')
+    return result
+  })
 }
